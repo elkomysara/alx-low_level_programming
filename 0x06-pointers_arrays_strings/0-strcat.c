@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  *_stract - Concat. two strings
@@ -11,18 +10,12 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int dlen = 0, i;
+	int index = 0, dest_len = 0;
 
-	while (dest[dlen])
-	{
-		dlen++;
-	}
-	for (i = 0; src[i] !=0; i++)
-	{
-		dest[dlen] = src[i];
-		dlen++;
-	}
+	while (dest[index++])
+		dest_len++;
 
-	dest[dlen] = '\0';
+	for (index = 0; src[index]; index++)
+		dest[dest_len++]
 	return (dest);
 }
