@@ -1,18 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-/**
- * File: main.h
- * auth: Sara elkomy
- * Desc: Header file containing prototypes for all functions
- */
-
-
-
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
-
-
-
-
-#endif
+char *_strncat(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
