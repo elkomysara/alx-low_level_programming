@@ -1,13 +1,2 @@
 #!/bin/bash
-
-# Get the C file name from the environment variable CFILE
 CFILE=$CFILE
-
-# Create the output file name
-OUTFILE=$CFILE.s
-
-# Generate the assembly code
-gcc -S -masm=intel $CFILE -o $OUTFILE
-
-# Exit with success
-exit 0
