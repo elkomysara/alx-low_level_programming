@@ -21,7 +21,7 @@ printf("and is less than 6 and not 0\n");
 }
 else if (n % 10 > 5 && n % 10 != 0)
 {
-printf("and is less than 6 and not 0\n");
+printf("and is greater than 5 and not 0\n");
 }
 else
 {
