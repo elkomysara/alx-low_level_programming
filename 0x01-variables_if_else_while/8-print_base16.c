@@ -1,37 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible
- * different combinations of two digits.
+ * main - prints all
+ * the numbers of base 16 in lowercase,
+ * followed by a new line
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
 int x;
-int y;
-int z;
-
-y = 0;
-for (x = 0; x <= 7; x++)
-{
-for (y = 1; y <= 8; y++)
-{
-for (z = 2; z <= 9; z++)
-{
-if (z > y && y > x)
+for (x = 0; x <= 9; x++)
 {
 putchar(x + '0');
-putchar(y + '0');
-putchar(z + '0');
-if (x < 7 || y < 8 || z < 9)
+}
+for (x = 'a'; x <= 'f'; x++)
 {
-putchar(',');
-putchar(' ');
-}
-}
-}
-}
+putchar(x);
 }
 putchar('\n');
 return (0);
