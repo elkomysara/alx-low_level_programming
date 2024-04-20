@@ -14,6 +14,10 @@ if (x < 0)
 x = -x;
 }
 x = x % 10;
+if (x < 0)
+{
+x = -x;
+}
 _putchar('0' + x);
 return (x);
 }
