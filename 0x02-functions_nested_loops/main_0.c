@@ -1,18 +1,5 @@
+#include <limits.h>
 #include "main.h"
-
-/**
- * test_isalpha - Test the _isalpha function
- *
- * @n: Number to pass to _isalpha function
- */
-void test_isalpha(int n)
-{
-	int r;
-
-	r = _isalpha(n);
-	_putchar(r + '0');
-	_putchar('\n');
-}
 
 /**
  * main - check the code for Holberton School students.
@@ -21,6 +8,10 @@ void test_isalpha(int n)
  */
 int main(void)
 {
-	test_isalpha('H');
+	int r;
+
+	r = print_last_digit(98);
+	_putchar('0' + r);
+	_putchar('\n');
 	return (0);
 }
