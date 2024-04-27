@@ -29,7 +29,7 @@ printf("\n");
 }
 else
 {
-while (x > 99)
+while (x > 97)
 {
 if (x < n)
 {
