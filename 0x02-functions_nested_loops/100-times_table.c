@@ -37,7 +37,7 @@ j++;
 printf("\n");
 i++;
 }
-printf("\n");
 }
+printf("\n");
 }
 
