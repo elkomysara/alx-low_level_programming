@@ -1,5 +1,5 @@
 
-#include "main.h"
+#include <stdio.h>
 
 /**
 * print_times_table - prints the n times table, starting with 0
@@ -18,23 +18,16 @@ for (j = 0; j <= n; j++)
 k = j * i;
 if (j == 0)
 {
-_putchar(k + '0');
+    printf("%d", k);
 }
-else if (k < 10 && j != 0)
+else
 {
-printf(",   %d", k);
-}
-else if (k >= 10 && k < 100)
-{
-printf(",  %d", k);
-}
-else if (k >= 100)
-{
-printf(", %d", k);
+    printf(",%4d", k);
 }
 }
-_putchar('\n');
+printf("\n");
 }
-_putchar('\n');
+printf("\n");
 }
 }
+
