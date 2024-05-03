@@ -40,8 +40,8 @@ printf(", %d", k *m);
 }
 k++;
 }
-m++;
 printf("\n");
+m++;
 }
 printf("\n");
 }
