@@ -1,4 +1,3 @@
-#include <limits.h>
 #include "main.h"
 
 /**
@@ -8,10 +7,6 @@
  */
 int main(void)
 {
-	int r;
-
-	r = print_last_digit(INT_MAX);
-	_putchar('0' + r);
-	_putchar('\n');
+	print_times_table(-2);
 	return (0);
 }

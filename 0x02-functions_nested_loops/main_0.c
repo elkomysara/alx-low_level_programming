@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -8,6 +7,6 @@
  */
 int main(void)
 {
-	jack_bauer();
+	print_times_table(2);
 	return (0);
 }
