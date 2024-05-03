@@ -25,7 +25,18 @@ printf("%d", k *m);
 }
 else
 {
-printf(",%d", k *m);
+if ((k *m) < 10)
+{
+printf(",   %d", k *m);
+}
+else if ((k *m) >= 10 && (k *m) < 100)
+{
+printf(",  %d", k *m);
+}
+else if ( (k *m) >= 100)
+{
+printf(", %d", k *m);
+}
 }
 k++;
 }
