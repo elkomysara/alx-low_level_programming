@@ -28,7 +28,7 @@ printf("%d", result);
 }
 else
 {
-printf(",%4d", result);
+printf(", %3d", result);
 }
 }
 printf("\n");
