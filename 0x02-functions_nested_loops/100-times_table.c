@@ -15,39 +15,29 @@ while (i <= n)
 j = 0;
 while (j <= n)
 {
-k = j * i;
+k = j *i;
 if (j == 0)
 {
-_putchar(k + '0');
+printf("%d", k);
 }
 else if (k < 10 && j != 0)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(' ');
-_putchar(k + '0');
+printf(",%4d", k);
 }
 else if (k >= 10 && k < 100)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar((k / 10) + '0');
-_putchar((k % 10) + '0');
+printf(", %3d", k);
 }
 else if (k >= 100)
 {
-_putchar(',');
-_putchar(' ');
-_putchar((k / 100) + '0');
-_putchar(((k / 10) % 10) + '0');
-_putchar((k % 10) + '0');
+printf(", %d", k);
 }
 j++;
 }
-_putchar('\n');
+printf("\n");
 i++;
 }
+printf("\n");
 }
 }
+
