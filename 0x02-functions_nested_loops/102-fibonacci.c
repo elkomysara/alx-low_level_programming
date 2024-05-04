@@ -9,19 +9,19 @@
 
 int main(void)
 {
-int sum = 0;
-int i = 0;
+int fibonacci[50];
+int i;
+fibonacci[0] = 1;
+fibonacci[1] = 2;
 
-while (i < 1024)
+printf("%d, %d", fibonacci[0], fibonacci[1]);
+
+for (i = 2; i < 50; i++)
 {
-if (i % 3 == 0 || i % 5 == 0)
-{
-sum += i;
-}
-i++;
+fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+printf(", %d", fibonacci[i]);
 }
 
-printf("%d\n", sum);
-
+printf("\n");
 return (0);
 }
