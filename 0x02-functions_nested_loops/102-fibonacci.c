@@ -1,27 +1,32 @@
 
-#include "main.h"
 #include <stdio.h>
 
 /**
-* main - prints the n times table, starting with 0
-* Return: Always 0.
-*/
-
+ * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-int fibonacci[50];
-int i;
-fibonacci[0] = 1;
-fibonacci[1] = 2;
+	long int i, j, k, next;
 
-printf("%d, %d", fibonacci[0], fibonacci[1]);
+	j = 1;
 
-for (i = 2; i < 50; i++)
-{
-fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-printf(", %d", fibonacci[i]);
-}
+	k = 2;
 
-printf("\n");
-return (0);
+	for (i = 1; i <= 50; ++i)
+	{
+		if (j != 20365011074)
+		{
+			printf("%ld, ", j);
+		} else
+		{
+			printf("%ld\n", j);
+		}
+		next = j + k;
+		j = k;
+		k = next;
+	}
+
+	return (0);
 }
