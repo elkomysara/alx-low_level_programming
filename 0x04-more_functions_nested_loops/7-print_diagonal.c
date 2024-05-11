@@ -12,13 +12,13 @@ _putchar('\n');
 }
 else
 {
-int i = 0; 
+int i = 0;
 int j;
 
-while(i < n)
+while (i < n)
 {
 j = 0;
-while(j < n)
+while (j < n)
 {
 if (j == i)
 {
