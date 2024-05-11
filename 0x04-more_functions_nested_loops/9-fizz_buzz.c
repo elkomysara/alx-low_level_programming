@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 
 /**
  * main - FizzBuzz test
@@ -12,7 +12,7 @@ for (i = 1; i <= 100; i++)
 {
 if (i == 1)
 {
-printf('%d', i);
+printf("%d", i);
 }
 else if (i % 3 == 0)
 {
@@ -26,6 +26,4 @@ else if (i % 3 == 0 && i % 5 == 0)
 {
 printf(" FizzBuzz");
 }
-}
-printf("\n");
 }
