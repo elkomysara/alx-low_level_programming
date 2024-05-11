@@ -11,10 +11,10 @@ if (n <= 0)
 {
 _putchar('\n');
 }
-while ( i <= n)
+while (i <= n)
 {
 _putchar('_');
 i++;
 }
-_putchar('\n')
+_putchar('\n');
 }
