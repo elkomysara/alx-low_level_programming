@@ -11,10 +11,14 @@ if (n <= 0)
 {
 _putchar('\n');
 }
+else
+{
 while (i <= n)
 {
 _putchar('_');
 i++;
 }
 _putchar('\n');
+}
+
 }
