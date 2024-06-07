@@ -24,6 +24,6 @@ printf("%d", a[i]);
 }
 
 /* Print a newline character */
-printf("\n"); 
+printf("\n");
 }
 
