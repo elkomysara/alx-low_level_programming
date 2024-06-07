@@ -25,7 +25,7 @@ else
 /* printing the last n characters of the string */
 /* n = (length_of_the_string -1)/2 */
 {
-i = (length - 1) / 2;
+i = (length - 1) / 2+1;
 }
 
 /* Print the second half of the string */
