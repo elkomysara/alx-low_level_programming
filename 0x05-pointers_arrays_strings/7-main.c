@@ -1,18 +1,15 @@
-#include <stdio.h>
+#include "main.h"
 
-void modif_my_param(int m)
-{
-    printf("Inside function before modification: m = %d\n", m);
-    m = 402;
-    printf("Inside function after modification: m = %d\n", m);
-}
-
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    int n = 98;
-    printf("Before function call: n = %d\n", n);
-    modif_my_param(n);
-    printf("After function call: n = %d\n", n);
+    char *str;
 
-    return 0;
+    str = "0123456789";
+    puts_half(str);
+    return (0);
 }
