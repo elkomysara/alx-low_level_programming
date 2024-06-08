@@ -8,18 +8,16 @@
 *
 * Return: Pointer to dest
 */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
 
 /* Save the starting point of dest to return later */
 
 char *ptr = dest;
 
-while (*src != '\0') /* Loop until the end of the source string */
+while (*src) /* Loop until the end of the source string */
 {
-*dest = *src;    /* Copy the current character from src to dest */
-dest++;          /* Move to the next character in dest */
-src++;           /* Move to the next character in src */
+*dest++ = *src++;    /* Copy the current character from src to dest */
 }
 *dest = '\0';        /* Add the terminating null byte at the end of dest */
 
