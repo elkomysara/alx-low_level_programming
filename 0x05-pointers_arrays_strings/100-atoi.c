@@ -13,6 +13,9 @@ int _atoi(char *s)
 int res = 0;
 int sign = 1;
 /* To handle negative numbers */
+int found_digit = 0;
+/* To track if a digit has been found */
+
 
 /* Skip leading whitespace */
 while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
@@ -28,11 +31,21 @@ s++;
 }
 
 /* Convert digits to integer */
-while (*s >= '0' && *s <= '9')
+while (*s)
+{
+if (*s >= '0' && *s <= '9')
 {
 res = res * 10 + (*s - '0');
+found_digit = 1;
+}
+else
+{
+/* Break if non-digit encountered after a digit */
+if (found_digit) {
+break;
+}
+}
 s++;
 }
-
 return (res *sign);
 }
