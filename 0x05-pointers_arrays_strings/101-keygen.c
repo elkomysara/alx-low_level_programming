@@ -3,23 +3,31 @@
 #include <time.h>
 
 #define PASSWORD_LENGTH 10
+/**
+* main - Converts a string to an integer
+* @s: The string to be converted
+*
+* Return: The integer value of the converted string
+*/
 
-int main() {
-    char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    int charset_size = sizeof(charset) - 1;
-    char password[PASSWORD_LENGTH + 1];
-    int i;
+int main(void)
+{
+char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+int charset_size = sizeof(charset) - 1;
+char password[PASSWORD_LENGTH + 1];
+int i;
 
-    srand(time(NULL));
+srand(time(NULL));
 
-    /* Generate the password */
-    for (i = 0; i < PASSWORD_LENGTH; i++) {
-        password[i] = charset[rand() % charset_size];
-    }
-    password[PASSWORD_LENGTH] = '\0'; // Null-terminate the string
+/* Generate the password */
+for (i = 0; i < PASSWORD_LENGTH; i++)
+{
+password[i] = charset[rand() % charset_size];
+}
+password[PASSWORD_LENGTH] = '\0'; /* Null-terminate the string */
 
-    /* Print the generated password */
-    printf("%s\n", password);
+/* Print the generated password */
+printf("%s\n", password);
 
-    return 0;
+return (0);
 }
