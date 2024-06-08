@@ -5,7 +5,6 @@
 #define PASSWORD_LENGTH 10
 /**
 * main - Converts a string to an integer
-* @s: The string to be converted
 *
 * Return: The integer value of the converted string
 */
