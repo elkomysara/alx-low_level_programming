@@ -11,18 +11,18 @@
 
 int main(void)
 {
-/* Initialize random number generator */
-srand(time(NULL));
-
-/* Define the valid password length and character set */
-int password_length = 10; /* Example length */
+int password_length; /* Example length */
 char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 int charset_size = sizeof(charset) - 1;
+char password[11]; /* password_length + 1 for null terminator */
+int i;
+
+srand(time(NULL)); /* Initialize random number generator */
+password_length = 10; /* Assign the password length */
 
 /* Generate the password */
-char password[11];
-int i;
-for (i = 0; i < password_length; i++) {
+for (i = 0; i < password_length; i++)
+{
 password[i] = charset[rand() % charset_size];
 }
 password[password_length] = '\0'; /* Null-terminate the string */
