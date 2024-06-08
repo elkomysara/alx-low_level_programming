@@ -16,6 +16,7 @@ int number_started = 0;
 
 while (s[i] != '\0')
 {
+int digit; /* Declare digit at the beginning of the block */
 /* Skip non-numeric characters except sign symbols */
 if (s[i] == '-' && !number_started)
 {
@@ -28,7 +29,16 @@ else if (s[i] == '+' && !number_started)
 else if (s[i] >= '0' && s[i] <= '9')
 {
 number_started = 1;
-result = result * 10 + (s[i] - '0');
+digit = s[i] - '0';
+
+/* Check for potential overflow */
+if (result > (INT_MAX - digit) / 10)
+{
+/* Overflow detected, return max value or min value based on sign */
+return (sign > 0 ? INT_MAX : INT_MIN);
+}
+
+result = result * 10 + digit;
 }
 else if (number_started)
 {
