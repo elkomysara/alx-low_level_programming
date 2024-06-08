@@ -20,8 +20,9 @@ char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 int charset_size = sizeof(charset) - 1;
 
 /* Generate the password */
-char password[password_length + 1];
-for (int i = 0; i < password_length; i++) {
+char password[11];
+int i;
+for (i = 0; i < password_length; i++) {
 password[i] = charset[rand() % charset_size];
 }
 password[password_length] = '\0'; /* Null-terminate the string */
