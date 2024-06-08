@@ -7,40 +7,36 @@
 * Return: The integer value of the converted string
 */
 
-
 int _atoi(char *s)
 {
-int res = 0;
+int i = 0;
 int sign = 1;
-int found_digit = 0;
-while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
+int result = 0;
+int number_started = 0;
+
+while (s[i] != '\0')
 {
-s++;
+/* Skip non-numeric characters except sign symbols */
+if (s[i] == '-' && !number_started)
+{
+sign = -sign;
 }
-if (*s == '-' || *s == '+')
+else if (s[i] == '+' && !number_started)
 {
-sign = (*s == '-') ? -1 : 1;
-s++;
+/* Just move to the next character */
 }
-while (*s)
+else if (s[i] >= '0' && s[i] <= '9')
 {
-if (*s >= '0' && *s <= '9')
-{
-if (res > INT_MAX / 10 || (res == INT_MAX / 10 && (*s - '0') > INT_MAX % 10))
-{
-return ((sign == 1) ? INT_MAX : INT_MIN);
+number_started = 1;
+result = result * 10 + (s[i] - '0');
 }
-res = res * 10 + (*s - '0');
-found_digit = 1;
-}
-else
+else if (number_started)
 {
-if (found_digit)
-{
+/* Break on first non-numeric character after starting number */
 break;
 }
+i++;
 }
-s++;
-}
-return (res *sign);
+
+return (sign *result);
 }
