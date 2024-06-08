@@ -1,32 +1,33 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 10
 /**
-* main - Converts a string to an integer
+* main - generates random valid passwords for the program 101-crackme.
 *
-* Return: The integer value of the converted string
+* Return: Always 0
 */
-
 int main(void)
 {
-char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-int charset_size = sizeof(charset) - 1;
-char password[PASSWORD_LENGTH + 1];
-int i;
+int pass[100];
 
+int i, sum, n;
+
+sum = 0;
 srand(time(NULL));
-
-/* Generate the password */
-for (i = 0; i < PASSWORD_LENGTH; i++)
+for (i = 0; i < 100; i++)
 {
-password[i] = charset[rand() % charset_size];
+pass[i] = rand() % 78;
+sum += (pass[i] + '0');
+putchar(pass[i] + '0');
+if ((2772 - sum) -'0' < 78)
+{
+n = 2772 - sum - '0';
+sum += n;
+putchar(n + '0');
+break;
 }
-password[PASSWORD_LENGTH] = '\0'; /* Null-terminate the string */
-
-/* Print the generated password */
-printf("%s\n", password);
-
+}
 return (0);
 }
