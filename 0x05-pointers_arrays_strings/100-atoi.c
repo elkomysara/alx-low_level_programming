@@ -6,33 +6,33 @@
 *
 * Return: The integer value of the converted string
 */
+
+
 int _atoi(char *s)
 {
-int sign = 1; /* To store the sign of the number */
-int result = 0; /* To store the result of the conversion */
-int started = 0; /* Flag to indicate if conversion has started */
+int res = 0;
+int sign = 1;
+/* To handle negative numbers */
 
-while (*s != '\0') /* Loop through the string until the null terminator */
+/* Skip leading whitespace */
+while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
 {
-if (*s == '-' && !started) /* If a minus sign is found and conversion hasn't started */
-{
-sign *= -1; /* Flip the sign */
-}
-else if (*s == '+' && !started) /* If a plus sign is found and conversion hasn't started */
-{
-/* Do nothing, just skip the sign */
-}
-else if (*s >= '0' && *s <= '9') /* If a numeric character is found */
-{
-started = 1; /* Indicate that conversion has started */
-result = result * 10 + (*s - '0'); /* Convert character to number and add to result */
-}
-else if (started) /* If a non-numeric character is found after conversion has started */
-{
-break; /* Stop conversion */
-}
-s++; /* Move to the next character */
+s++;
 }
 
-return result * sign; /* Apply the sign to the result and return */
+/* Check for sign */
+if (*s == '-' || *s == '+')
+{
+sign = (*s == '-') ? -1 : 1;
+s++;
+}
+
+/* Convert digits to integer */
+while (*s >= '0' && *s <= '9')
+{
+res = res * 10 + (*s - '0');
+s++;
+}
+
+return (res *sign);
 }
