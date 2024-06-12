@@ -10,12 +10,15 @@
 */
 int main(void)
 {
+/* declares an array called 'pass with a size of 100 integers' */
 int pass[100];
-
-int i, sum, n;
-
+int i;
+int sum;
+int n;
 sum = 0;
+
 srand(time(NULL));
+
 for (i = 0; i < 100; i++)
 {
 pass[i] = rand() % 78;
