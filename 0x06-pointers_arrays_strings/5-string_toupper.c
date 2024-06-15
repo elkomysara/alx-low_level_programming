@@ -16,7 +16,7 @@ while (*ptr)
 if (*ptr >= 'a' && *ptr <= 'z')
 {
 /* *ptr = *ptr - ('a' - 'A'); */
-*ptr = *ptr - ('a' - 'A'); 
+*ptr = *ptr - ('a' - 'A');
 }
 
 ptr++;
