@@ -2,28 +2,43 @@
 #include <stdio.h>
 
 /**
- * print_array - prints n elements of an array of integers
- * @a: array of integers
- * @n: number of elements to print
- */
+* rot13 - encodes a string using rot13
+* @str: the input string to be encoded
+*
+* Description: This function encodes a string using the ROT13 cipher.
+*              ROT13 is a simple letter substitution cipher that replaces
+*              a letter with the letter 13 letters after it in the alphabet.
+*              It is primarily used for obfuscation.
+*              This implementation uses a single 'if' statement
+*              and two loops, adhering to specific constraints.
+*
+* Return: The encoded string
+*/
 
-void print_array(int *a, int n)
+char *rot13(char *str)
 {
+char *ptr = str;
+char rot13_map[256] = {0};
 int i;
+/* populate the ROT13 mapping array */
 
-/* for loop for the array */
-for (i = 0; i < n; i++)
+for (i = 0; i < 26; i++)
 {
-/* sperate numbers by comma, followed by a space */
-if (i != 0)
-{
-printf(", ");
-}
-/* displayed in the same order as they are stored in the array */
-printf("%d", a[i]);
+rot13_map['a' + i] = 'a' + (i + 13) % 26;
+rot13_map['A' + i] = 'A' + (i + 13) % 26;
 }
 
-/* Print a newline character */
-printf("\n");
+/* Traverse the string and apply the ROT13 transformation */
+while (*ptr)
+{
+if (rot13_map[(unsigned char)*ptr])
+{
+*ptr = rot13_map[(unsigned char)*ptr];
+}
+ptr++;
+}
+
+return (str);
+
 }
 
