@@ -10,7 +10,7 @@ int _strlen(char *s);
 void _puts(char *str);
 void print_rev(char *s);
 void rev_string(char *s);
-char *string_toupper(char *);
-char *cap_string(char *);
-
+void puts2(char *str);
+void puts_half(char *str);
+char *leet(char *);
 #endif
