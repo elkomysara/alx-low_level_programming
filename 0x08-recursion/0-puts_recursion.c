@@ -15,6 +15,6 @@ return;
 
 putchar(*s); /* Print the current character */
 /* Recursively call the function with the next character */
-_puts_recursion(s + 1); 
+_puts_recursion(s + 1);
 
 }
