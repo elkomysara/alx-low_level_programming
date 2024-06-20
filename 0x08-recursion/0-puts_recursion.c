@@ -1,21 +1,20 @@
 #include "main.h"
+#include <stdio.h> /* For putchar */
+
 /**
-* _memset - fills memory with a constant byte
-* @s: pointer to the memory area
-* @b: the byte to fill the memory with
-* @n: the number of bytes to fill
-*
-* Return: a pointer to the memory area s
+* _puts_recursion - prints a string followed by a new line.
+* @s: The string to print.
 */
-
-char *_memset(char *s, char b, unsigned int n)
+void _puts_recursion(char *s)
 {
-unsigned int i;
-
-for (i = 0; i < n; i++)
+if (*s == '\0') /* Base case: if we reach the end of the string */
 {
-s[i] = b;
+putchar('\n'); /* Print a new line */
+return;
 }
 
-return (s);
+putchar(*s); /* Print the current character */
+/* Recursively call the function with the next character */
+_puts_recursion(s + 1); 
+
 }
