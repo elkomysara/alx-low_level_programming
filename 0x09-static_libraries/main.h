@@ -2,7 +2,6 @@
 #define FILE_MAIN
 
 #include <stdio.h>
-
 int _putchar(char x);
 int _islower(int x);
 int _isalpha(int x);
@@ -15,6 +14,8 @@ char *_strncpy(char *dest, char *src, int n);
 int _strcmp(char *s1, char *s2);
 void _puts(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
+char *_memset(char *s, char b, unsigned int n);
+
 
 
 #endif
