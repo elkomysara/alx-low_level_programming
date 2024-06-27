@@ -22,5 +22,7 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strcpy(char *dest, char *src);
 
+int _atoi(char *s);
+
 
 #endif
