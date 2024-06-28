@@ -6,5 +6,5 @@
 int _putchar(char x);
 int _islower(int x);
 int _isalpha(int x);
-
+int _abs(int);
 #endif
