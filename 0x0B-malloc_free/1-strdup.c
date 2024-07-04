@@ -17,20 +17,20 @@ int len;
 
 if (str == NULL)
 {
-return NULL;
+return (NULL);
 }
 
 len = strlen(str);
-dup_str = malloc((len + 1) * sizeof(char)); 
+dup_str = malloc((len + 1) * sizeof(char));
 /* Allocate memory for the new string */
 
 if (dup_str == NULL)
 {
-return NULL; 
+return (NULL);
 /* Return NULL if malloc fails */
 }
 
 strcpy(dup_str, str);
 /* Copy the string to the newly allocated memory */
-return dup_str;
+return (dup_str);
 }
