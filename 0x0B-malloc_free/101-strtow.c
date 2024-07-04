@@ -1,47 +1,86 @@
 #include <stdlib.h>
 #include "main.h"
+
 /**
-* main - Prints the minimum number of coins
-* to make change for an amount of money.
-* @argc: Argument count.
-* @argv: Argument vector.
+* count_words - Counts the number of words in a string.
+* @str: The string to count words in.
 *
-* Return: 0 if successful, 1 if there are invalid arguments.
+* Return: The number of words in the string.
 */
-int main(int argc, char *argv[])
+int count_words(char *str)
 {
-int amount, coins = 0;
+int count = 0, in_word = 0;
 
-if (argc != 2)
+while (*str)
 {
-printf("Error\n");
-return (1);
+if (*str == ' ')
+{
+in_word = 0;
+}
+else if (in_word == 0)
+{
+in_word = 1;
+count++;
+}
+str++;
 }
 
-amount = atoi(argv[1]);
-
-if (amount < 0)
-{
-printf("0\n");
-return (0);
+return (count);
 }
 
-while (amount > 0)
+/**
+* strtow - Splits a string into words.
+* @str: The string to split.
+*
+* Return: A pointer to an array of strings (words),
+* or NULL if it fails.
+*/
+char **strtow(char *str)
 {
-if (amount >= 25)
-amount -= 25;
-else if (amount >= 10)
-amount -= 10;
-else if (amount >= 5)
-amount -= 5;
-else if (amount >= 2)
-amount -= 2;
-else
-amount -= 1;
+char **words, *word;
+int i, j, k, word_len, num_words;
 
-coins++;
+if (str == NULL || *str == '\0')
+return (NULL);
+
+num_words = count_words(str);
+if (num_words == 0)
+return (NULL);
+
+words = malloc((num_words + 1) * sizeof(char *));
+if (words == NULL)
+return (NULL);
+
+i = 0;
+while (*str)
+{
+if (*str == ' ')
+{
+str++;
+continue;
 }
 
-printf("%d\n", coins);
-return (0);
+word_len = 0;
+while (str[word_len] && str[word_len] != ' ')
+word_len++;
+
+word = malloc((word_len + 1) * sizeof(char));
+if (word == NULL)
+{
+for (j = 0; j < i; j++)
+free(words[j]);
+free(words);
+return (NULL);
+}
+
+for (k = 0; k < word_len; k++)
+word[k] = str[k];
+word[k] = '\0';
+words[i++] = word;
+
+str += word_len;
+}
+words[i] = NULL;
+
+return (words);
 }
