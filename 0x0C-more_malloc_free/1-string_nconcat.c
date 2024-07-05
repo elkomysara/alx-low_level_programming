@@ -34,7 +34,7 @@ n = len2;
 len = len1 + n + 1;
 
 /* Allocate memory for the new string */
-concat = malloc(len * sizeof(char));
+concat = malloc(len *sizeof(char));
 if (concat == NULL)
 {
 return (NULL);
