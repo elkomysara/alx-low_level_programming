@@ -1,7 +1,18 @@
 
-#ifndef SUM_H
-#define SUM_H
+#include <stdlib.h>
+#include "dog.h"
 
-#define SUM(x, y) ((x) + (y))
+/**
+* free_dog - Frees a dog.
+* @d: The dog to free.
+*/
+void free_dog(dog_t *d)
+{
+if (d == NULL)
+return;
 
-#endif /* SUM_H */
+free(d->name);
+free(d->owner);
+free(d);
+}
+
