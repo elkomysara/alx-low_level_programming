@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 #include <stddef.h>
-#include <unistd.h> /* For write function */
+#include <unistd.h>
 
 /**
 * _putchar - writes the character c to stdout
