@@ -27,7 +27,6 @@ exit(97);
 fd_from = open(argv[1], O_RDONLY);
 if (fd_from == -1)
 {
-perror("Error opening file_from");
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
@@ -35,7 +34,6 @@ exit(98);
 fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 if (fd_to == -1)
 {
-perror("Error opening file_to");
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 close(fd_from);
 exit(99);
@@ -46,7 +44,6 @@ while ((r_count = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 w_count = write(fd_to, buffer, r_count);
 if (w_count != r_count)
 {
-perror("Error writing to file_to");
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 close(fd_from);
 close(fd_to);
@@ -56,7 +53,6 @@ exit(99);
 
 if (r_count == -1)
 {
-perror("Error reading from file_from");
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 close(fd_from);
 close(fd_to);
@@ -65,7 +61,6 @@ exit(98);
 
 if (close(fd_from) == -1)
 {
-perror("Error closing file_from");
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 close(fd_to);
 exit(100);
@@ -73,7 +68,6 @@ exit(100);
 
 if (close(fd_to) == -1)
 {
-perror("Error closing file_to");
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 exit(100);
 }
