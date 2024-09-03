@@ -10,17 +10,21 @@
 */
 int main(int argc, char *argv[])
 {
+char *username;
+int len;
+int sum = 0;
+int i;
+
 if (argc != 2)
 {
 printf("Usage: %s <username>\n", argv[0]);
 return 1;
 }
 
-char *username = argv[1];
-int len = strlen(username);
-int sum = 0;
+username = argv[1];
+len = strlen(username);
 
-for (int i = 0; i < len; i++)
+for (i = 0; i < len; i++)
 {
 sum += username[i];
 }
