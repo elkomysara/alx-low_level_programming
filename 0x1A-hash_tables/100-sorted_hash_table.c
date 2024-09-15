@@ -184,8 +184,8 @@ printf("}\n");
 }
 
 /**
-* shash_table_delete - Deletes a sorted hash table
-* @ht: The hash table
+* shash_table_delete - Deletes a sorted hash table.
+* @ht: The hash table to delete.
 */
 void shash_table_delete(shash_table_t *ht)
 {
@@ -201,4 +201,8 @@ temp = node->snext;
 free(node->key);
 free(node->value);
 free(node);
-node
+node = temp;
+}
+free(ht->array);
+free(ht);
+}
